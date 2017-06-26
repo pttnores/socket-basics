@@ -2,21 +2,14 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Socket IO First App</title>
-
+    <title>Title</title>
 </head>
 <body>
-<h1>Socket IO first app</h1>
-<div class="messages">
-
-</div>
-<form id="message-form">
-    <input type="text" name="message" id="message"/>
-    <input type="submit" id="send"/>
+<h1>Join chat</h1>
+<form action="./chat.html">
+    <label for="name">Name: </label> <input id="name" name="name" type="text" />
+    <label for="room">Room</label> <input id="room" name="room" type="text" />
+    <input type="submit">
 </form>
-<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-<script src="/js/moment-with-locales.min.js"></script>
-<script src="/js/socket.io.js"></script>
-<script type="text/javascript" src="/js/app.js"></script>
 </body>
 </html>

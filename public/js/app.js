@@ -1,17 +1,18 @@
 var socket = io();
-//var moment = moment();
+var room = getQueryVariable('room') || 'general';
+var name = getQueryVariable('name') || 'Anonymous';
 
 socket.on('connect', function () {
     console.log('Connected to the server');
 });
 
-socket.on('message', function (message) {
-    console.log('New message: ' + message.text);
-    var momentTimestamp = moment.utc(message.timestamp);
-    jQuery('.messages').append('<p>' +
-        '<strong style="font-weight: bold">' + momentTimestamp.local().format("h:mm a") + '</strong>: ' +
-        message.text +
-        '</p>');
+socket.on('message', function (newMessage) {
+    console.log('New message: ' + newMessage.text);
+    var momentTimestamp = moment.utc(newMessage.timestamp);
+    var message = jQuery('.messages');
+    console.log(newMessage);
+    message.append('<p><strong style="font-weight: bold">' + newMessage.name + ' ' +momentTimestamp.local().format("h:mm a") + '</strong>:');
+    message.append(' ' + newMessage.text + '</p>');
 });
 
 // Handle submitting
@@ -23,7 +24,8 @@ $form.on('submit', function () {
     var message = $form.find('input[name=message]');
 
     socket.emit('message', {
-        text: message.val()
+        text: message.val(),
+        name: name
     });
     message.val('');
 });
