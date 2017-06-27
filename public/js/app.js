@@ -19,7 +19,7 @@ socket.on('message', function (newMessage) {
     var $message = jQuery('<li class="list-group-item"></li>');
     console.log(newMessage);
     $message.append('<strong style="font-weight: bold">' + newMessage.name + ' ' +momentTimestamp.local().format("h:mm a") + '</strong>:');
-    $message.append(' ' + newMessage.text);
+    $message.append('<p>' + newMessage.text + '</p>');
     $messages.append($message);
 });
 
