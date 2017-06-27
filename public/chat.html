@@ -3,22 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <title>Socket IO First App</title>
-
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 </head>
 <body>
-    <a href="index.html">Settings</a>
-    <h1 class="room-title">Socket IO first app</h1>
-    <div class="messages">
+<div class="vertical-center">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 col-md-offset-4 well">
+                <a href="index.html">Settings</a>
+                <h1 class="room-title">Socket IO first app</h1>
+                <div class="messages">
 
+                </div>
+                <form id="message-form">
+                    <div class="form-group">
+                        <div class="input-group">
+                            <span class="input-group-addon">
+                                <i class="glyphicon glyphicon-comment"></i>
+                            </span>
+                            <input type="text" name="message" id="message" tabindex="1"/>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <input class="btn btn-primary" type="submit" id="send"/>
+                    </div>
+                </form>
+            </div>
+        </div>
     </div>
-    <form id="message-form">
-        <input type="text" name="message" id="message" tabindex="1"/>
-        <input type="submit" id="send"/>
-    </form>
-    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-    <script src="/js/moment-with-locales.min.js"></script>
-    <script src="/js/QueryParams.js"></script>
-    <script src="/js/socket.io.js"></script>
-    <script type="text/javascript" src="/js/app.js"></script>
+</div>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script src="/js/moment-with-locales.min.js"></script>
+<script src="/js/QueryParams.js"></script>
+<script src="/js/socket.io.js"></script>
+<script type="text/javascript" src="/js/app.js"></script>
 </body>
 </html>
